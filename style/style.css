@@ -1,0 +1,24 @@
+:root{
+    --netflix-red: #E50914; /* Cor principal do logo da Netflix e botões chamativos, transmite energia e urgência */
+    --netflix-black: #000000; /* Usado como cor de fundo para dar contraste e sofisticação à interface */
+    --netflix-white: #FFFFFF; /* Cor dos textos principais e ícones sobre fundos escuros, facilita a leitura */
+    --netflix-dark-gray: #303030; /* Utilizado para fundos secundários e áreas de navegação, traz profundidade */
+    --netflix-deep-red: #B00710; /* Variante do vermelho principal, usada em hover ou elementos complementares */
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+body{
+    background-color: var(--netflix-black);
+}
+header{
+    display: flex;
+    align-items: center;
+}
+#logo{
+    height: 75px;
+}
