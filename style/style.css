@@ -10,15 +10,53 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
 }
 body{
+    width: 100vw;
+    height: 100vh;
     background-color: var(--netflix-black);
 }
 header{
+    width: 100vw;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    gap: 40px;
 }
-#logo{
-    height: 75px;
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.user-area{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 30px;
+}
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+.notification-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+}
+.nav-links > a{
+    color: var(--netflix-white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
 }
