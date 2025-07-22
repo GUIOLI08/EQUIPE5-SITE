@@ -112,9 +112,9 @@ class FiveflixCarousel {
         
         // Dados de exemplo para filmes/séries
         const content = [
-            { title: "Filme 1", image: "https://via.placeholder.com/240x135/E50914/FFFFFF?text=Filme+1", type: "filme" },
-            { title: "Série 1", image: "https://via.placeholder.com/240x135/B00710/FFFFFF?text=Serie+1", type: "serie" },
-            { title: "Filme 2", image: "https://via.placeholder.com/240x135/E50914/FFFFFF?text=Filme+2", type: "filme" },
+            { title: "Lucas borges se assume homossexual e abala a internet", image: "https://i.ytimg.com/vi/m2zDk8yS964/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDevwos7MUlDtRiJFa7t7hGf3wUZg", type: "filme" },
+            { title: "Escrevi Deus com d minúsculo as 3:00 AM! (Fui jubilado?)", image: "https://i.ytimg.com/vi/bRCG76HANZc/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCXsY-jumf47YSB4J2KYbOUjPZ0kg", type: "serie" },
+            { title: "Guilherme Oliver utiliza o seu bumbum e choca o mundo!<br>(Muito Juicy)", image: "https://i.ytimg.com/vi/eW6U6z5tzwE/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLD0vGC1FX8e8tha2_lnY8twj3OpZA", type: "filme" },
             { title: "Série 2", image: "https://via.placeholder.com/240x135/B00710/FFFFFF?text=Serie+2", type: "serie" },
             { title: "Filme 3", image: "https://via.placeholder.com/240x135/E50914/FFFFFF?text=Filme+3", type: "filme" },
             { title: "Série 3", image: "https://via.placeholder.com/240x135/B00710/FFFFFF?text=Serie+3", type: "serie" },
