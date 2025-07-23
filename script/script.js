@@ -1,4 +1,6 @@
-// Carrossel para Fiveflix
+const botao_play = document.getElementById("play");
+const botao_information = document.getElementById("information");
+
 class FiveflixCarousel {
     constructor(containerSelector) {
         this.container = document.querySelector(containerSelector);
@@ -471,3 +473,9 @@ function addContentToCarousel(sectionTitle, contentArray) {
         // Lógica para adicionar novos itens
     }
 }
+botao_information.addEventListener("click", () => {
+    window.location.href = "info.html";
+});
+botao_play.addEventListener("click", () => {
+    window.location.href = "assistir.html";
+});

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/LogoIcon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Fiveflix</title>
+    <link rel="stylesheet" href="/style/info.css">
+</head>
+<body>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="content-info">
+                <div class="movie-logo">
+                    <img src="/images/Título4.png" style="height: 130px;" alt="" srcset="" class="content-title">
+                </div>
+                
+                <div class="content-meta">
+                    <span class="year">2025</span>
+                    <span class="quality">4k</span>
+                    <span class="rating">A16</span>
+                    <span class="genre">Curta-metragem</span>
+                    <span class="duration">10 min</span>
+                </div>
+
+                <div class="content-details">
+                    <div class="details-section">
+                        <h3 class="details-title">Elenco</h3>
+                        <div class="cast-list">
+                            <div class="cast-member">
+                                <span class="actor-name">Gian Marco Crelick</span>
+                                <span class="character-name">Professor</span>
+                            </div>
+                            <div class="cast-member">
+                                <span class="actor-name">Marcos Henry Hougaz</span>
+                                <span class="character-name">Aluno</span>
+                            </div>
+                            <div class="crew-member">
+                                <span class="actor-name">Lucas Borges Moraes</span>
+                                <span class="character-name">Supervisor</span>
+                            </div>
+                            <div class="cast-member">
+                                <span class="actor-name">Guilherme Celestino dos Santos</span>
+                                <span class="character-name">Roger Finger</span>
+                            </div>
+                            <div class="cast-member">
+                                <span class="actor-name">Lara Ferreira</span>
+                                <span class="character-name">Jornalista</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="details-section">
+                        <h3 class="details-title">Equipe Técnica</h3>
+                        <div class="crew-list">
+                            <div class="crew-member">
+                                <span class="crew-role">Diretora Executiva:</span>
+                                <span class="crew-name">Lara Ferreira</span>
+                            </div> 
+                            <div class="crew-member">
+                                <span class="crew-role">Co-diretor:</span>
+                                <span class="crew-name">João Pedro de Alencar</span>
+                            </div>
+                            <div class="crew-member">
+                                <span class="crew-role">Diretor de arte:</span>
+                                <span class="crew-name">Gian Marco Crelick</span>
+                            </div>
+                            <div class="crew-member">
+                                <span class="crew-role">Cameraman:</span>
+                                <span class="crew-name">Lucas de Carvalho Silva</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="content-description">
+                    Mergulha num futuro inquietante onde a educação é comandada por inteligências artificiais — eficientes, incansáveis, mas desprovidas da essência humana. O curta provoca uma reflexão potente sobre a perda dos vínculos, da empatia e do olhar atento que só os professores podem oferecer.
+                </p>
+                
+                <div class="action-buttons">
+                    <button class="play-btn" onclick="playContent()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="currentColor">
+                            <path d="M320-200v-560l440 280-440 280Z"/>
+                        </svg>
+                        Assistir
+                    </button>
+                    <button class="secondary-btn" onclick="showMoreInfo()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                            <path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/>
+                        </svg>
+                        Mais informações
+                    </button>
+                </div>
+                
+                <div class="interaction-buttons">
+                    <button class="icon-btn" onclick="toggleLike(this)" title="Gostei">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                            <path d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Z"/>
+                        </svg>
+                    </button>
+                    <button class="icon-btn" onclick="toggleDislike(this)" title="Não gostei">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                            <path d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19T334-132v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Z"/>
+                        </svg>
+                    </button>
+                    <button class="icon-btn" onclick="toggleWatchlist(this)" title="Adicionar à lista">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                            <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="/images/Cópia de ENSINO IARTIFICIAL (1).png" alt="Error 404: Professor não encontrado">
+                <div class="image-overlay"></div>
+            </div>
+        </section>
+
+        <section class="additional-content">
+            <div class="section">
+                <h2 class="section-title">Títulos semelhantes</h2>
+                <div class="similar-content">
+                    <div class="similar-card" onclick="openContent('black-mirror')">
+                        <div class="similar-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=169&fit=crop" alt="Black Mirror" />
+                        </div>
+                        <div class="similar-info">
+                            <div class="similar-title">Black Mirror</div>
+                            <div class="similar-meta">2023 • Ficção Científica • Série</div>
+                        </div>
+                    </div>
+                    
+                    <div class="similar-card" onclick="openContent('her')">
+                        <div class="similar-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=169&fit=crop" alt="Her" />
+                        </div>
+                        <div class="similar-info">
+                            <div class="similar-title">Her</div>
+                            <div class="similar-meta">2013 • Drama • Romance</div>
+                        </div>
+                    </div>
+                    
+                    <div class="similar-card" onclick="openContent('ex-machina')">
+                        <div class="similar-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=169&fit=crop" alt="Ex Machina" />
+                        </div>
+                        <div class="similar-info">
+                            <div class="similar-title">Ex Machina</div>
+                            <div class="similar-meta">2014 • Thriller • Ficção Científica</div>
+                        </div>
+                    </div>
+                    
+                    <div class="similar-card" onclick="openContent('wall-e')">
+                        <div class="similar-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1580894742597-87bc8789db3d?w=300&h=169&fit=crop" alt="WALL-E" />
+                        </div>
+                        <div class="similar-info">
+                            <div class="similar-title">WALL-E</div>
+                            <div class="similar-meta">2008 • Animação • Ficção Científica</div>
+                        </div>
+                    </div>
+
+                    <div class="similar-card" onclick="openContent('blade-runner')">
+                        <div class="similar-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=169&fit=crop" alt="Blade Runner 2049" />
+                        </div>
+                        <div class="similar-info">
+                            <div class="similar-title">Blade Runner 2049</div>
+                            <div class="similar-meta">2017 • Ficção Científica • Drama</div>
+                        </div>
+                    </div>
+
+                    <div class="similar-card" onclick="openContent('matrix')">
+                        <div class="similar-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=169&fit=crop" alt="The Matrix" />
+                        </div>
+                        <div class="similar-info">
+                            <div class="similar-title">The Matrix</div>
+                            <div class="similar-meta">1999 • Ficção Científica • Ação</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/script/info.js"></script>
+</body>
+</html>
