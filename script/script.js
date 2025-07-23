@@ -113,15 +113,15 @@ class FiveflixCarousel {
         // Dados de exemplo para filmes/séries
         const content = [
             { title: "Lucas borges se assume homossexual e abala a internet", image: "https://i.ytimg.com/vi/m2zDk8yS964/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDevwos7MUlDtRiJFa7t7hGf3wUZg", type: "filme" },
-            { title: "Escrevi Deus com d minúsculo as 3:00 AM! (Fui jubilado?)", image: "https://i.ytimg.com/vi/bRCG76HANZc/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCXsY-jumf47YSB4J2KYbOUjPZ0kg", type: "serie" },
+            { title: "Quebrando Mal", image: "https://occ-0-1422-1740.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABTY_oFMWa4w_MOegHro1RQFJygb7yu6ECJNjt0DIKOAEA00qkrtT2db1NM6RKMyEuhv4LPUrF96wCiAEvoSewxNHpcLSAQvrnr4.webp?r=c69", type: "serie" },
             { title: "Guilherme Oliver utiliza o seu bumbum e choca o mundo!<br>(Muito Juicy)", image: "https://i.ytimg.com/vi/eW6U6z5tzwE/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLD0vGC1FX8e8tha2_lnY8twj3OpZA", type: "filme" },
-            { title: "Série 2", image: "https://via.placeholder.com/240x135/B00710/FFFFFF?text=Serie+2", type: "serie" },
-            { title: "Filme 3", image: "https://via.placeholder.com/240x135/E50914/FFFFFF?text=Filme+3", type: "filme" },
-            { title: "Série 3", image: "https://via.placeholder.com/240x135/B00710/FFFFFF?text=Serie+3", type: "serie" },
-            { title: "Filme 4", image: "https://via.placeholder.com/240x135/E50914/FFFFFF?text=Filme+4", type: "filme" },
-            { title: "Série 4", image: "https://via.placeholder.com/240x135/B00710/FFFFFF?text=Serie+4", type: "serie" },
-            { title: "Filme 5", image: "https://via.placeholder.com/240x135/E50914/FFFFFF?text=Filme+5", type: "filme" },
-            { title: "Série 5", image: "https://via.placeholder.com/240x135/B00710/FFFFFF?text=Serie+5", type: "serie" }
+            { title: "As Aventuras Bizarras do João Jobim", image: "https://occ-0-1422-1740.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABeluDGHOChJqlLtIFvyg0i7YMJM-eOrxbVTnxk89mYEz7r1FC2BzprNqSX5_N37hxcMWH4yZlA3SkgnZmtJ2XrU9o-qvpDvMC49Q8a3KOZ_sExrtB0ielHPPS7I3YUYsUSrs.jpg?r=e7e", type: "serie" },
+            { title: "O Anúncio de Eggman", image: "https://i.ytimg.com/vi/fueRUi5AWWQ/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB2wQ3M0zd3Xeqyx3bDJUwXxUWXYQ", type: "filme" },
+            { title: "Sousou no Frieren", image: "https://occ-0-1422-1740.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABUH1ha2mHYVxlQa4leVaDEjcb2gK_bdceGk_fFllBjIpvUK6p58vCnH5AoDDQJrk0SzmOPbUrdtaFTUqa2Ncybrejgb402IldmI.webp?r=4e5", type: "serie" },
+            { title: "Escrevi Deus com d minúsculo as 3:00 AM! (Fui jubilado?)", image: "https://i.ytimg.com/vi/bRCG76HANZc/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCXsY-jumf47YSB4J2KYbOUjPZ0kg", type: "filme" },
+            { title: "Verdade Absolutas", image: "https://i.ytimg.com/vi/H9T8J2Yst-I/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDMEgRHrqzRUB_tevTZ0bZfRkqexA", type: "serie" },
+            { title: "Does he know?", image: "https://uploads.dailydot.com/2023/11/does-he-know-meme.jpg?q=65&auto=format&w=1600&ar=2:1&fit=crop", type: "filme" },
+            { title: "Ok, google", image: "https://occ-0-1422-1740.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRJ8Jb4BgXLqX03PRKwPtecqmjm0rYrPyHSboX9kxjhUVGvln3efYOpCXCLuRw4XCu3z0TPFfjQpHmleemnArFY_vTtxAhLSl-9heL6FiGazm0FWFhee3P7DEBw_NQ4ioEC9.jpg?r=39b", type: "serie" }
         ];
         
         tracks.forEach((track, trackIndex) => {
