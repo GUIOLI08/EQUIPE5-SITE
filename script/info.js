@@ -1,6 +1,6 @@
 // Função para reproduzir o conteúdo
 function playContent() {
-    alert('Iniciando reprodução de "Error 404: Professor não encontrado"');
+    window.location.href = `assistir.html`;
     // Aqui você pode implementar a lógica para iniciar o player de vídeo
 }
 
