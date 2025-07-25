@@ -1,0 +1,494 @@
+:root{
+--netflix-red: #E50914;
+--netflix-black: #000000;
+--netflix-white: #FFFFFF;
+--netflix-dark-gray: rgb(22 22 22);
+--netflix-deep-red: #B00710;
+}
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Montserrat', sans-serif;
+}
+
+body{
+width: 100vw;
+min-height: 100vh;
+background-color: var(--netflix-black);
+overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+display: none;
+}
+
+header{
+z-index: 9999;
+position: fixed;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 15px 20px;
+gap: 40px;
+background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+}
+
+nav{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 40px;
+}
+
+#logo {
+height: 75px;
+max-width: 100%;
+}
+
+.nav-links{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+}
+
+.nav-links > a{
+color: var(--netflix-white);
+text-decoration: none;
+font-weight: bold;
+font-size: 16px;
+transition: scale 0.2s ease;
+white-space: nowrap;
+}
+
+.nav-links > a:hover{
+scale: 1.1;
+}
+
+.user-area{
+display: flex;
+flex-direction: row-reverse;
+align-items: center;
+gap: 30px;
+}
+
+.user{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 9px;
+}
+
+.user img {
+border-radius: 4px;
+}
+
+.notification-search{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+}
+
+.notification-button, .search-button{
+display: flex;
+align-items: center;
+justify-content: center;
+border: none;
+background-color: transparent;
+cursor: pointer;
+padding: 8px;
+border-radius: 4px;
+transition: background-color 0.2s ease;
+}
+
+.notification-button:hover, .search-button:hover {
+background-color: rgba(255,255,255,0.1);
+}
+
+.notification-button > svg, .search-button > svg{
+transition: scale 0.2s ease;
+}
+
+.notification-button > svg:hover, .search-button > svg:hover{
+scale: 1.1;
+}
+
+main {
+padding-top: 0;
+}
+
+.teaser-area {
+position: relative;
+width: 100%;
+min-height: 100vh;
+display: flex;
+align-items: center;
+}
+
+.teaser-area img#teaser{
+width: 100%;
+height: 100vh;
+object-fit: cover;
+mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+-webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+.movies-area{
+width: 100%;
+height: 80vh;
+}
+
+.title-descricao-div{
+position: absolute;
+display: flex;
+flex-direction: column;
+justify-content: center;
+bottom: 25%;
+left: 50px;
+right: 50px;
+gap: 20px;
+z-index: 10;
+}
+
+#title{
+height: 130px;
+max-width: 100%;
+object-fit: contain;
+align-self: flex-start;
+}
+
+.descricao{
+color: white;
+max-width: 700px;
+font-size: 16px;
+line-height: 1.6;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.play-more-information{
+display: flex;
+margin-top: 25px;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.play-button{
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: var(--netflix-red);
+border: none;
+gap: 10px;
+color: white;
+padding: 12px 22px 12px 15px;
+font-size: 18px;
+font-weight: bold;
+min-width: 160px;
+cursor: pointer;
+border-radius: 6px;
+transition: all 0.2s ease;
+}
+
+.play-button:hover{
+transform: scale(1.05);
+background-color: var(--netflix-deep-red);
+}
+
+.information-button{
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(48, 48, 48, 0.8);
+border: none;
+gap: 10px;
+padding: 12px 22px 12px 15px;
+color: white;
+font-size: 18px;
+font-weight: bold;
+cursor: pointer;
+border-radius: 6px;
+transition: all 0.2s ease;
+backdrop-filter: blur(10px);
+}
+
+.information-button:hover{
+transform: scale(1.05);
+background-color: rgba(22, 22, 22, 0.9);
+}
+
+footer{
+display: flex;
+padding: 100px 50px 50px 50px;
+background-color: var(--netflix-dark-gray);
+width: 100%;
+min-height: 50vh;
+gap: 50px;
+}
+
+.left-section, .right-section{
+display: flex;
+width: 50%;
+flex-direction: column;
+gap: 60px;
+}
+
+.left-section > div, .right-section > div {
+display: flex;
+gap: 100px;
+}
+
+.left-section > div > div, .right-section > div > div {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.left-section a, .right-section a {
+color: rgba(255, 255, 255, 0.7);
+text-decoration: none;
+font-size: 14px;
+transition: color 0.2s ease;
+}
+
+.left-section a:hover, .right-section a:hover {
+color: white;
+}
+
+/* Menu móvel */
+.mobile-menu {
+display: none;
+}
+
+.hamburger {
+display: none;
+flex-direction: column;
+cursor: pointer;
+padding: 4px;
+}
+
+.hamburger span {
+width: 25px;
+height: 3px;
+background-color: white;
+margin: 3px 0;
+transition: 0.3s;
+}
+
+/* Responsividade */
+@media screen and (max-width: 1200px) {
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links > a {
+        font-size: 14px;
+    }
+
+    .title-descricao-div {
+        left: 30px;
+        right: 30px;
+    }
+
+    .descricao {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    header {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    .user-area {
+        gap: 20px;
+    }
+
+    .notification-search {
+        gap: 15px;
+    }
+
+    .title-descricao-div {
+        bottom: 20%;
+        left: 20px;
+        right: 20px;
+    }
+
+    #title {
+        height: 100px;
+    }
+
+    .descricao {
+        font-size: 14px;
+        max-width: 500px;
+    }
+
+    .play-button, .information-button {
+        font-size: 16px;
+        padding: 10px 18px;
+        min-width: 140px;
+    }
+
+    footer {
+        padding: 80px 30px 40px 30px;
+    }
+
+    .left-section > div, .right-section > div {
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    #logo {
+        height: 60px;
+    }
+
+    .user-area {
+        gap: 15px;
+    }
+
+    .notification-search {
+        gap: 10px;
+    }
+
+    .notification-button svg, .search-button svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .title-descricao-div {
+        bottom: 15%;
+        left: 15px;
+        right: 15px;
+        gap: 15px;
+    }
+
+    #title {
+        height: 80px;
+    }
+
+    .descricao {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .play-more-information {
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .play-button, .information-button {
+        font-size: 14px;
+        padding: 8px 15px;
+        min-width: 120px;
+    }
+
+    .play-button svg, .information-button svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 60px 20px 30px 20px;
+        gap: 30px;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        gap: 40px;
+    }
+
+    .left-section > div, .right-section > div {
+        gap: 30px;
+    }
+
+    .left-section p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    #logo {
+        height: 50px;
+    }
+
+    .user img {
+        height: 40px;
+    }
+
+    .title-descricao-div {
+        bottom: 10%;
+        left: 10px;
+        right: 10px;
+    }
+
+    #title {
+        height: 60px;
+    }
+
+    .descricao {
+        font-size: 12px;
+    }
+
+    .play-more-information {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .play-button, .information-button {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+
+    footer {
+        padding: 40px 15px 20px 15px;
+    }
+
+    .left-section > div, .right-section > div {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-section p {
+        font-size: 16px;
+    }
+}

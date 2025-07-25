@@ -112,14 +112,14 @@
 
         .hero-section {
             display: flex;
-            height: 90vh;
+            height: 100vh;
             position: relative;
             overflow: hidden;
         }
 
         .content-info {
             flex: 1;
-            padding: 0 60px;
+            padding: 0 60px 0px 0px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -131,6 +131,7 @@
                 rgba(0,0,0,0.3) 80%,
                 transparent 100%
             );
+            scale: 0.85;
         }
 
         .hero-image {
