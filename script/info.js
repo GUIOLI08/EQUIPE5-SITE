@@ -1,24 +1,20 @@
 // Função para reproduzir o conteúdo
 function playContent() {
     window.location.href = `assistir.html`;
-    // Aqui você pode implementar a lógica para iniciar o player de vídeo
 }
 
 // Função para mostrar mais informações
 function showMoreInfo() {
     alert('Mostrando mais informações sobre o filme');
-    // Aqui você pode implementar um modal ou navegar para uma página de detalhes
 }
 
 // Função para alternar o botão de curtir
 function toggleLike(button) {
     button.classList.toggle('active');
     if (button.classList.contains('active')) {
-        // Remove active do botão de não curtir se estiver ativo
         const dislikeBtn = button.parentElement.children[1];
         dislikeBtn.classList.remove('active');
         
-        // Animação de feedback
         button.style.transform = 'scale(1.2)';
         setTimeout(() => {
             button.style.transform = 'scale(1)';
@@ -30,11 +26,9 @@ function toggleLike(button) {
 function toggleDislike(button) {
     button.classList.toggle('active');
     if (button.classList.contains('active')) {
-        // Remove active do botão de curtir se estiver ativo
         const likeBtn = button.parentElement.children[0];
         likeBtn.classList.remove('active');
         
-        // Animação de feedback
         button.style.transform = 'scale(1.2)';
         setTimeout(() => {
             button.style.transform = 'scale(1)';
@@ -47,7 +41,6 @@ function toggleWatchlist(button) {
     button.classList.toggle('active');
     const isAdded = button.classList.contains('active');
     
-    // Muda o ícone baseado no estado
     button.innerHTML = isAdded ? 
         `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
             <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
@@ -56,13 +49,11 @@ function toggleWatchlist(button) {
             <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
         </svg>`;
     
-    // Feedback visual
     button.style.transform = 'scale(1.2)';
     setTimeout(() => {
         button.style.transform = 'scale(1)';
     }, 200);
     
-    // Mensagem de feedback
     const message = isAdded ? 'Adicionado à sua lista!' : 'Removido da sua lista!';
     showToast(message);
 }
@@ -70,18 +61,15 @@ function toggleWatchlist(button) {
 // Função para abrir conteúdo relacionado
 function openContent(contentId) {
     alert(`Abrindo conteúdo: ${contentId}`);
-    // Aqui você pode implementar a navegação para o conteúdo selecionado
 }
 
 // Função para mostrar notificação toast
 function showToast(message) {
-    // Remove toast existente se houver
     const existingToast = document.querySelector('.toast');
     if (existingToast) {
         existingToast.remove();
     }
     
-    // Cria novo toast
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.textContent = message;
@@ -103,12 +91,10 @@ function showToast(message) {
     
     document.body.appendChild(toast);
     
-    // Anima entrada
     setTimeout(() => {
         toast.style.transform = 'translateX(0)';
     }, 100);
     
-    // Remove após 3 segundos
     setTimeout(() => {
         toast.style.transform = 'translateX(100%)';
         setTimeout(() => {
@@ -122,14 +108,112 @@ function showToast(message) {
 // Efeito de scroll no header
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
-    const scrolled = window.scrollY > 100;
-    
-    if (scrolled) {
-        header.style.background = 'rgba(0, 0, 0, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
-    } else {
-        header.style.background = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 100%)';
-        header.style.backdropFilter = 'none';
+    if (header) {
+        const scrolled = window.scrollY > 100;
+        
+        if (scrolled) {
+            header.style.background = 'rgba(0, 0, 0, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        } else {
+            header.style.background = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 100%)';
+            header.style.backdropFilter = 'none';
+        }
     }
 });
 
+// Controle de scroll horizontal com mouse wheel no container similar-content
+document.addEventListener('DOMContentLoaded', function() {
+    const similarContent = document.querySelector('.similar-content');
+    
+    if (similarContent) {
+        similarContent.addEventListener('wheel', function(e) {
+            // Previne o scroll vertical quando dentro do container
+            e.preventDefault();
+            
+            // Aplica o scroll horizontal
+            this.scrollLeft += e.deltaY;
+        }, { passive: false });
+    }
+});
+
+// Controles de teclado para scroll horizontal
+document.addEventListener('keydown', function(e) {
+    const similarContent = document.querySelector('.similar-content');
+    if (!similarContent) return;
+    
+    // Verifica se o foco está na área de conteúdo similar
+    const rect = similarContent.getBoundingClientRect();
+    const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+    
+    if (isInView) {
+        if (e.key === 'ArrowLeft') {
+            similarContent.scrollLeft -= 300;
+            e.preventDefault();
+        } else if (e.key === 'ArrowRight') {
+            similarContent.scrollLeft += 300;
+            e.preventDefault();
+        }
+    }
+});
+
+// Suporte a touch/swipe para dispositivos móveis no container horizontal
+let touchStartX = 0;
+let touchEndX = 0;
+let isScrolling = false;
+
+document.addEventListener('DOMContentLoaded', function() {
+    const similarContent = document.querySelector('.similar-content');
+    
+    if (similarContent) {
+        similarContent.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].clientX;
+            isScrolling = false;
+        });
+        
+        similarContent.addEventListener('touchmove', function(e) {
+            if (!isScrolling) {
+                const touchCurrentX = e.touches[0].clientX;
+                const diffX = touchStartX - touchCurrentX;
+                
+                // Se o movimento horizontal é maior que o vertical, previne o scroll da página
+                if (Math.abs(diffX) > 10) {
+                    isScrolling = true;
+                    e.preventDefault();
+                }
+            }
+        }, { passive: false });
+        
+        similarContent.addEventListener('touchend', function(e) {
+            if (isScrolling) {
+                touchEndX = e.changedTouches[0].clientX;
+                handleHorizontalSwipe();
+            }
+        });
+    }
+});
+
+function handleHorizontalSwipe() {
+    const similarContent = document.querySelector('.similar-content');
+    if (!similarContent) return;
+    
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            // Swipe left - scroll para direita
+            similarContent.scrollLeft += 300;
+        } else {
+            // Swipe right - scroll para esquerda
+            similarContent.scrollLeft -= 300;
+        }
+    }
+}
+
+// Smooth scroll behavior para navegação por teclado e mouse
+document.addEventListener('DOMContentLoaded', function() {
+    const similarContent = document.querySelector('.similar-content');
+    if (similarContent) {
+        similarContent.style.scrollBehavior = 'smooth';
+    }
+});
