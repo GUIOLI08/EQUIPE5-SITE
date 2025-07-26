@@ -118,12 +118,28 @@ nav{
     gap: 20px;
 }
 
-@media (max-width: 1204px) {
+@media (max-width: 1024px) {
     header{
         position: absolute;
         justify-content: center;
         align-items: center;
         padding: 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .box{
+        align-items: center;
+        background-color: black;
+        padding: 0;
+    }
+    button{
+        width: 225px;
+    }
+    body{
+        background-image: var(--netflix-black);
+        background-color: black;
     }
 
 }
@@ -134,7 +150,5 @@ nav{
     button{
         max-width: 18rem; 
     }
-    .box{
-        padding-left: 50px;
-    }
+    
 }
